@@ -1,0 +1,10 @@
+@import "~normalize.css";
+@import "./vars";
+@import "./fonts";
+
+body {
+	margin: 0;
+	padding: 30px;
+	background: $main url("../img/img-2.jpg") no-repeat center / cover;
+	font-family: Pangolin, sans-serif;
+}
