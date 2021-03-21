@@ -16,7 +16,8 @@ const devtool = () => (isProd ? false : "eval-source-map");
 module.exports = {
 	context: path.resolve(__dirname, "src"),
 	mode: "development",
-	entry: "./index.js",
+	// entry: "./js/index.js",
+	entry: ['@babel/polyfill', './index.js'],
 	output: {
 		path: path.resolve(__dirname, "dist"),
 		filename: `${filename("js")}`,
@@ -35,11 +36,6 @@ module.exports = {
 	devtool: devtool(),
 	module: {
 		rules: [
-			{
-				test: /\.js$/i,
-				exclude: /node_modules/,
-				use: "babel-loader",
-			},
 			{
 				test: /\.html$/i,
 				use: ["html-loader"],
